@@ -1,0 +1,42 @@
+package practiceAdvanced.practice09;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Q02_Map_UrunFiyatlariniTopla {
+
+    public static void main(String[] args) {
+
+        // Bir map içerisinde verilen fiyatların toplamını bulan bir kod yazınız.(for each loop kullanınız)
+        // Örn: {Kemer=19.99, Gömlek=29.99, Ayakkabı=89.99, Kazak=24.99, Kravat=19.99} ==> Toplam: 184.95
+
+        HashMap<String, Double> price = new HashMap<>();
+        price.put("Kemer", 19.99);
+        price.put("Gömlek", 29.99);
+        price.put("Ayakkabı", 89.99);
+        price.put("Kazak", 24.99);
+        price.put("Kravat", 19.99);
+
+        System.out.println(calculatePrice(price));
+
+
+    }
+
+    public static double calculatePrice(HashMap<String, Double> map){
+
+        System.out.println("Urunler ve fiyatlari: " + map);
+        Collection<Double> prices = map.values();
+        System.out.println(prices);
+        double sum = 0;
+        for (double w : prices){
+            sum += w;
+        }
+        return sum;
+
+    }
+
+
+
+}
